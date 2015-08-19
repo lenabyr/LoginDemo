@@ -1,47 +1,51 @@
 ﻿body{
 	margin:0px;
 	padding: 0px;
-	background-color: #fff;
+	background-color: #ccc;
 }
 #container{
 	width:960px;
 	margin:0 auto;
 	font-size: 14px;
 	font-family: "微软雅黑";
-	background: #FDFDFD;
+	background: #fff;
 	min-height: 667px;
-	/*height: 1200px;*/
 }
 #header{
 	width: 100%;
-	height: 80px;
-	background: rgb(222, 229, 231);	
+	height: 50px;
+	background: #000 none repeat scroll 0 0;
+    color: #fff;	
 }
 .head_left{	
 	width: 80%;
 	float: left;
 }
-.head_left h2{
-	margin:20px;
-	font-size: 25px;
-	/*font-weight: bold;*/
-	text-align: center;
-	color:rgb(106, 106, 186);
+.head_left span{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 40px;
+    margin: 10px;
+}
+.head_left span small{
+    font-size: 10px;
+    font-weight: normal;
+    padding-left: 20px;
 }
 .head_right{
-	width: 20%;	
-	float:right;
+    float: right;
+    margin: 10px;
 }
 .head_right .btn{
-  padding: 10px;
-  margin: 30px;
-  text-align: right;
-  float: right;
-  background: rgb(131, 186, 131);	
+	color: #000;
 }
 #main{
-	width: 100%;
-	/*height: 7px;*/		
+	width: 100%;		
+}
+#main h3{
+    font-weight: normal;
+    margin: 10px;
+    padding: 5px;
 }
 .top{
 	height: 40px;	
@@ -51,10 +55,10 @@
 	text-align: center;
 }
 .left{
-  min-height: 500px;
-  width: 18%;
-  background: #F2F1F1;
-  float: left;
+    background: #f2f1f1 none repeat scroll 0 0;
+    float: left;
+    min-height: 500px;
+    width: 160px;
 }
 .title{
   padding-right: 5px;
@@ -69,10 +73,7 @@
 	padding-left: 10px;
 }
 .right{
-	width: 80%;
-	float: right;
-	/*min-height: 700px;*/
-	/*border-left: 1px solid #ccc;*/
+	margin-left: 20px;
 }
 .content{
 	/*margin:5px; */
