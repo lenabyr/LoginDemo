@@ -1,3 +1,59 @@
+window.onload=function(){
+	var oBtn=document.getElementById("btn_login");
+	oBtn.onclick=function(){
+		openNew();
+		drag();
+	}
+}
+/**
+**弹出窗口
+***/
+function openNew(){
+	//获取页面高度和宽度
+	var sHeight=document.documentElement.scrollHeight;
+	var sWidth=document.documentElement.scrollWidth;
+	//创建遮罩层结点
+	var oMask=document.createElement("div");
+	oMask.id="mask";
+	oMask.style.height=sHeight+'px';
+	oMask.style.width=sWidth+'px';
+	document.body.appendChild(oMask);
+
+	//创建登录框节点
+	var oLogin=document.createElement("div");
+	oLogin.id="login";
+	oLogin.innerHTML='<div class="loginHead"><h4 class="login_logo">登录</h4><div id="close"></div></div><div class="loginContent">'+
+					 '<div class="loginmodel"><label>用户名：</label><input type="text" name="username" id="username" value="" /></div>'+
+					 '<div class="loginmodel"><label>密码：</label><input type="password" name="paswd" id="paswd" /></div>'+
+					 '<input type="button" name="Login" id="Login" value="登   录"/></div>';
+	document.body.appendChild(oLogin);
+
+	//获取可视区域高度和宽度
+	var cHeight=document.documentElement.clientHeight;
+	var cWidth=document.documentElement.clientWidth;
+
+	//获取login的宽度和高度
+	var dHeight=oLogin.offsetHeight;
+	var dWidth=oLogin.offsetWidth;
+	
+	//让弹出框居中
+	oLogin.style.top=(cHeight-dHeight)/2 +'px';
+	oLogin.style.left=(cWidth-dWidth)/2 + 'px';
+
+	//点击关闭弹出框
+	var oClose=document.getElementById("close");
+	oClose.onclick=function(){
+		document.body.removeChild(oMask);
+		document.body.removeChild(oLogin);
+	}	
+}
+/**
+**拖拽窗口
+***/
+function drag(){
+	var oTitle=getByClass('loginHead','login')[0];
+	oTitle.onmousedown=fnDown;
+}
 /**
 **根据类名获取元素
 ***/
@@ -13,15 +69,6 @@ function getByClass(clsName,parent){
 	}
 	return eles;
 }
-
-/**
-**拖拽窗口
-***/
-function drag(){
-	var oTitle=getByClass('login_logo','login')[0];
-	oTitle.onmousedown=fnDown;
-}
-
 //鼠标按下时触发
 function fnDown(event){
 	event=event||window.event;
@@ -63,81 +110,5 @@ function fnMove(e,posX,posY){
 	oDrag.style.top=t+"px";
 }
 
-/**
-**弹出窗口
-***/
-function openNew(){
-	//获取页面高度和宽度
-	var sHeight=document.documentElement.scrollHeight;
-	var sWidth=document.documentElement.scrollWidth;
 
-	//获取可视区域高度和宽度
-	var cHeight=document.documentElement.clientHeight;
-	var cWidth=document.documentElement.clientWidth;
 
-	//创建元素结点，即登录弹出框
-	var oMask=document.createElement("div");
-	oMask.id="mask";
-	oMask.style.height=sHeight+'px';
-	oMask.style.width=sWidth+'px';
-	document.body.appendChild(oMask);
-	var oLogin=document.createElement("div");
-	oLogin.id="login";
-	oLogin.innerHTML="<div id='logincontent'><div id='close'></div><div class='login_logo'><p>登录</p></div><div class='login_content'></div></div>";
-	document.body.appendChild(oLogin);
-
-	//获取login的宽度和高度
-	var dHeight=oLogin.offsetHeight;
-	var dWidth=oLogin.offsetWidth;
-	
-	//让弹出框居中
-	oLogin.style.top=(cHeight-dHeight)/2 +'px';
-	oLogin.style.left=(cWidth-dWidth)/2 + 'px';
-
-	//window.onload=drag;
-
-	var oClose=document.getElementById("close");
-	//oMask.onclick=oClose.onclick=function(){
-	oClose.onclick=function(){
-		document.body.removeChild(oMask);
-		document.body.removeChild(oLogin);
-	}	
-}
-
-window.onload=function(){
-	var oBtn=document.getElementById("btn_login");
-/*	var oMask=document.getElementById("mask");
-	var oLogin=document.getElementById("login");
-	oMask.style.display="none";
-	oLogin.style.display="none";*/
-	oBtn.onclick=function(){
-		//oMask.style.display="block";
-		//oLogin.style.display="block";
-		//最好在js中创建新窗口
-		openNewWin();
-		drag();
-	}
-}
-function openNewWin(){
-	var oLogin=document.getElementById("login");
-	var oClose=document.getElementById("close");
-	var oMask=document.getElementById("mask");
-	oMask.style.display="block";
-	oLogin.style.display="block";
-	//获取可视区域高度和宽度
-	var cHeight=document.documentElement.clientHeight;
-	var cWidth=document.documentElement.clientWidth;
-
-	//获取login的宽度和高度
-	var dHeight=oLogin.offsetHeight;
-	var dWidth=oLogin.offsetWidth;	
-
-	//让弹出框居中
-	oLogin.style.top=(cHeight-dHeight)/2 +'px';
-	oLogin.style.left=(cWidth-dWidth)/2 + 'px';	
-
-	oClose.onclick=function(){
-		oMask.style.display="none";
-		oLogin.style.display="none";
-	}	
-}

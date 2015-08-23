@@ -9,40 +9,54 @@
 	<body>
 		<div id="container">
 			<div id="header">
-				<div class="head_left">
-					<span>Lenabyr <small>欢迎来到我的测试界面！</small></span>
-				</div>				
-				<div class="head_right">
-					<input type="button" id="btn_login" class="btn" value="登录" />
-				</div>
+				<h3>Lenabyr-----------弹出登录框</h3>
+				<input type="button" id="btn_login" class="btn" value="登录" />		
 			</div>
-			<div id="main">
-				<h3>您的位置：弹出登录框</h3>
+			<div id="article">
 				<div class="left">
 					<h4 class="title">登鹳雀楼</h4>
 					<p>白日依山尽，<br/>黄河入海流。<br/>欲穷千里目，<br/>更上一层楼。</p>
 					<div class="calender">添加日历</div>
 				</div>
 				<div class="right">
-					<h5>弹出登录框步骤及注意事项</h5>
 					<div class="content">
-						
+						<h4>1、弹出登录框</h4>
+						<p>点击登录按钮后会创建两个节点，分别是遮罩和登录。在弹出层中涉及到的知识点如下：</p>
+						<ol>
+							<li>定位：absolute、relative、fixed</li>
+							<li>事件：onload、onclick</li>
+							<li>DOM操作：getElementById(),scrollHeight(),clientHeight(),createElement(),appendChild(),removeChild().</li>
+						</ol>
+						<p>获取页面高度和宽度：scrollHeight()、scrollWidth();</p>
+						<p>透明度写法:opacity:0.75;filter:alpha(opacity=75);//专门为兼容IE使用滤镜。</p>
+						<p>遮罩层绝对定位，页面中有些块在遮罩层上方时，这时设置z-index;登陆框的外层框fixed固定定位，fixed静态定位是相对整个屏幕的。比如：position:fixed;left:30%;top:30%;登录框相对定位，关闭按钮绝对定位.</p>
+					</div>
+					<div class="content">
+						<h4>2、实现拖动</h4>
+					</div>
+					<div class="content">
+						<h4>3、每日一学------高级程序设计第二章</h4>
+						<h5>在HTML中使用JavaScript</h5>
+						<p>把Javascript插入到HTML中要使用&lt;script&gt;元素。使用这个元素可以把JavaScript嵌入到HTML页面中，也可以包含外部的JavaScript文件。页面嵌入示例如下：</p>
+						<pre>&lt;script type="text/javascript"&gt;&lt;/script&gt;</pre>
+						<p>而如果包含外部js文件，则示例如下：</p>
+						<pre>&lt;script type="text/javascript" src="example.js"&gt;&lt;/script&gt;</pre>
+						<p>在这里需要注意的地方是：</p>
+						<ol>
+							<li>在包含外部js文件时，必须将src属性设置为指向相应的URL文件。</li>
+							<li>所有&lt;script&gt;元素都会按照他们在页面中出现的先后顺序依次被解析。在不使用defer和async属性的情况下，按照先后顺序依次解析script代码。</li>
+							<li>延迟脚本：使用defer属性可以让脚本在文档完全呈现之后再按照出现的先后顺序执行。defer属性只适用于外部脚本文件。</li>
+							<li>异步脚本：使用async属性（html5位script元素定义的属性）可以表示当前脚本不必等待其他脚本，也不必阻塞文档呈现，不能保证异步脚本按照它们在页面中出现的顺序执行。async属性只适用于外部脚本文件。</li>
+						</ol>
+						<h5>JavaScript的数据类型都有什么？</h5>
+						<p>基本数据类型：String,boolean,Number,Undefined, Null</p>
+						<p>引用数据类型：Object(Array,Date,RegExp,Function)</p>
 					</div>
 				</div>				
 			</div>
 			<div id="footer">
-				<!-- <div class="foot_con"> -->
-					<a href="#">转到我的GitHub</a>
-				<!-- </div> -->
+				<a href="https://github.com/lenabyr">转到我的GitHub</a>
 			</div>
 		</div>
- 		<div id="mask" style="display:none"></div>
-		<div id="login" style="display:none">
-			<div class="logincontent">
-			<div id="close"></div>
-			<div class='login_logo'><p>登录</p></div>
-			<div class='login_content'></div>
-			</div>
-		</div> 
 	</body>
 </html>

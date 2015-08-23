@@ -1,98 +1,109 @@
-﻿body{
-	margin:0px;
-	padding: 0px;
-	background-color: #ccc;
+﻿*{margin:0;padding:0;}
+body{
+	background: #ccc;
+}
+body,p{
+	font-family: "MicroSoft YaHei";
+	font-size: 14px;
+	line-height: 1.5;
 }
 #container{
-	width:960px;
-	margin:0 auto;
-	font-size: 14px;
-	font-family: "微软雅黑";
+	width: 85%;
+	margin: 0 auto;
 	background: #fff;
-	min-height: 667px;
 }
 #header{
-	width: 100%;
-	height: 50px;
-	background: #000 none repeat scroll 0 0;
-    color: #fff;	
+	background: #000;
+	color: #fff;
+	padding: 10px;
+	height: 40px;
 }
-.head_left{	
-	width: 80%;
+#header h3{
 	float: left;
+	line-height: 40px;
+	padding-left: 20px;
 }
-.head_left span{
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 40px;
-    margin: 10px;
+#header .btn{
+	float: right;
+	height: 40px;
+	width: 45px;
+	margin-right: 10px;
 }
-.head_left span small{
-    font-size: 10px;
-    font-weight: normal;
-    padding-left: 20px;
+#header a:hover{
+	color:#fff;
 }
-.head_right{
-    float: right;
-    margin: 10px;
-}
-.head_right .btn{
-	color: #000;
-}
-#main{
-	width: 100%;		
-}
-#main h3{
-    font-weight: normal;
-    margin: 10px;
-    padding: 5px;
-}
-.top{
-	height: 40px;	
-}
-.top h2{
-	color: blue;
-	text-align: center;
+#article{
+	margin: 10px;
 }
 .left{
-    background: #f2f1f1 none repeat scroll 0 0;
-    float: left;
-    min-height: 500px;
-    width: 160px;
+	width: 180px;
+	float: left;
+	padding: 10px;
+	text-align: center;
 }
-.title{
-  padding-right: 5px;
-  padding-top: 10px;
-  text-align: center;
-  color: #9D9292;
-  margin-top: 5px;
+.left h4{
+	line-height: 30px;
 }
 .left p{
-	text-align: center;
-	line-height: 1.8;
-	padding-left: 10px;
+	line-height: 25px;
+}
+.calender{
+	margin: 20px 0;
+	padding: 10px;
 }
 .right{
-	margin-left: 20px;
+	margin-left: 200px;
 }
 .content{
-	/*margin:5px; */
-	/*border-left: 1px solid #ccc;*/
+	margin:5px;
+	padding:10px;
+}
+.content h4{
+	padding:0 0 10px 5px;
+	color: blue; 
+}
+.content p{
+	padding:0 10px 10px 10px;
+	text-indent: 2em;
+}
+.content p strong{
+	color:red;
+}
+.content p code{
+	color:blue;
+	font-weight: bold;
+}
+.content h5{
+	padding:10px 10px;
+	color: #111;
+}
+.content pre{
+	text-indent: 4em;
+	padding-bottom: 10px;
+}
+ol{
+	margin: 0 20px;
+	padding: 0 20px 10px;
+}
+li{
+	padding: 5px;
 }
 #footer{
-	clear:both;
-	width: 100%;
-	background: #F5F2F2;
-	height: 30px;
+  background: #000;
+  height: 30px;
+  padding: 5px 10px;
 }
-.foot_con{
-	 text-align: center;
-	 line-height: 30px;
-	 font-size: 12px;
+#footer a{
+	line-height: 30px;
+	margin: 0 0 0 45%;
+	color: grey;
+	text-decoration: none;
 }
-a:link {  color: #000; text-decoration: none}
-a:visited {  color: #000; text-decoration: none}
-a:hover {  color: blue; text-decoration: none}
+#footer a:hover{
+	color: #fff;
+}
+
+
 /***
 **弹出框样式
 ***/
@@ -100,29 +111,28 @@ a:hover {  color: blue; text-decoration: none}
 	background: #000;
 	opacity: 0.75;
 	filter:alpha(opacity=75);
-	/*height: 1000px;*/
-	width: 100%;
-	position: fixed;
+	height: 1000px;
+	width: 100%; 
+	position: absolute;
 	left: 0;
 	top: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 100px;
+	z-index: 2px;
 }
 #login{
 	position: fixed;
-	left: 30%;
-	top:30%;
-	z-index: 1000px;
-	width: 670px;
-	height: 380px;
-	background-color: red;
+	z-index: 3px;
+	height:380px;
+	width: 450px;
+	background: #fff;
 }
-#logincontent{
-	width: 670px;
-	height: 380px;
-	background-color: red;
-	position: relative;
+.loginHead{
+	height: 60px;
+	background: #ccc;
+}
+.loginHead h4{
+	line-height: 40px;
+	padding:10px 20px;
+	font-size: 20px;
 }
 #close{
 	width: 30px;
@@ -131,13 +141,31 @@ a:hover {  color: blue; text-decoration: none}
 	cursor: pointer;
 	position: absolute;
 	right: 0;
-	top: 0;
+	top: 5px;
 }
-.login_logo{
-	width: 350px;
-	height: 50px;
-	background: #fff;
-	text-align: center;
-	margin:0 50px 5px;
-
+.loginContent{
+	margin-top: 50px;
+}
+.loginmodel{
+	margin: 10px;
+	padding: 10px;
+	height: 40px;
+}
+.loginmodel label{
+	font-size: 18px;
+	margin-left: 40px;
+}
+.loginmodel input{
+	float: right;
+	margin-right: 50px;
+	height: 30px;
+	width: 200px;
+}
+#Login{
+	float: left;
+	margin: 10px 40px 10px 75px;
+	height: 40px;
+	width: 300px;
+	background: rgb(68, 82, 232);
+  	border-radius: 10px;
 }
