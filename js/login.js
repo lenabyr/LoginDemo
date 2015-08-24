@@ -29,8 +29,8 @@ function openNew(){
 	document.body.appendChild(oLogin);
 
 	//获取可视区域高度和宽度
-	var cHeight=document.documentElement.clientHeight;
-	var cWidth=document.documentElement.clientWidth;
+	var cHeight=getViewPort().height;
+	var cWidth=getViewPort().width;
 
 	//获取login的宽度和高度
 	var dHeight=oLogin.offsetHeight;
@@ -47,6 +47,24 @@ function openNew(){
 		document.body.removeChild(oLogin);
 	}	
 }
+//获取可视区域高度和宽度
+function getViewPort(){
+	//IE7之前，混杂模式
+	if(document.compatMode=="BackCompat"){
+		return{
+			width:document.body.clientWidth,
+			height:document.body.clientHeight
+		};
+	}
+	//标准模式
+	else{
+		return {
+			width:document.documentElement.clientWidth,
+			height:document.documentElement.clientHeight
+		};
+	}
+}
+
 /**
 **拖拽窗口
 ***/
@@ -92,8 +110,8 @@ function fnMove(e,posX,posY){
 	var oDrag=document.getElementById("login");
 	var l=e.clientX-posX;
 	var t=e.clientY-posY;
-	var winWidth=document.documentElement.clientWidth||document.body.clientWidth;
-	var winHeight=document.documentElement.clientHeight||document.body.clientHeight;
+	var winWidth=getViewPort().width;
+	var winHeight=getViewPort().height;
 	var maxW=winWidth-oDrag.offsetWidth;
 	var maxH=winHeight-oDrag.offsetHeight;
 	if(l<0){
@@ -109,6 +127,3 @@ function fnMove(e,posX,posY){
 	oDrag.style.left=l+"px";
 	oDrag.style.top=t+"px";
 }
-
-
-
